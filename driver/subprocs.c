@@ -948,6 +948,11 @@ spawn_screenhack (saver_screen_info *ssi)
           /* No hacks at all */
           new_hack = -1;
         }
+      else if (si->mouse_grab_screen != ssi->number)
+        {
+          /* Not the screen with the mouse */
+          new_hack = -1;
+        }
       else if (p->screenhacks_count == 1)
         {
           /* Exactly one hack in the list */
